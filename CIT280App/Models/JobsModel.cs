@@ -7,6 +7,8 @@ namespace CIT280App.Models
 {
     public class JobsModel
     {
+        // this is a test
+        // this is test 2
         public string JobID { get; set; }
         public bool IsComplete { get; set; }
         public string Name { get; set; }
@@ -16,5 +18,7 @@ namespace CIT280App.Models
         public int Pay { get; set; }
         public string City { get; set; }
         public string State { get; set; }
+        public int StudentID { get; set; }
+        public int EmployerID { get; set; }
     }
 }

@@ -7,7 +7,6 @@ namespace CIT280App.Models
 {
     public class StudentModel:UserModel
     {
-        public string SutdentID { get; set; }
         public string Major { get; set; }
         public string School { get; set; }
         public string YearInSchool { get; set; }
