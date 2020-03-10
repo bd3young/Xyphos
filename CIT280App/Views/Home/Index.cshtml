@@ -2,10 +2,22 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
+<style>
+
+    a{
+        color:white;
+        text-decoration: none;
+    }
+    a:hover{
+        color:aliceblue;
+        text-decoration:none;
+    }
+</style>
+
+<div class="text-center jumbotron bg-info text-white">
     <h1>What is Xyphos</h1>
     <p class="lead">Xyphos is made for students to find work around their location that utilizes their unique skillset. Xyphos allows Employers to post jobs that students can accept for work experience and pay.</p>
-    <p><a href="" class="btn btn-primary btn-lg">Login &raquo;</a></p>
+    <p class="btn btn-primary btn-lg">@Html.ActionLink("Login", "Login", "Account")</p>
 </div>
 
 <div class="row">
@@ -14,16 +26,16 @@
         <p>
             Students can browse the jobs that employers post and contact the employers if they are interested in the job
         </p>
-        <p class="btn btn-primary btn-sm" style="color: white;">@Html.ActionLink("Student Dashboard", "StudentDashboard", "Student")</p>
+        <p class="btn btn-primary btn-lg" style="color: white;">@Html.ActionLink("Student Dashboard", "StudentDashboard", "Student")</p>
     </div>
     <div class="col-md-4">
         <h2>As a Employer</h2>
         <p>Employers can post jobs for students and accept whichever student they believe will be the best for the job they have posted. </p>
-        <p class="btn btn-primary btn-sm">@Html.ActionLink("Employer Dashboard", "EmployerDashboard", "Employer")</p>
+        <p class="btn btn-primary btn-lg"> @Html.ActionLink("Employer Dashboard", "EmployerDashboard", "Employer")</p>
     </div>
     <div class="col-md-4">
         <h2>As an Administrator</h2>
         <p>Aministrators can edit and delete all user profiles as well as jobs.</p>
-        <p class="btn btn-primary btn-sm">@Html.ActionLink("Administrator Dashboard", "AdminDashboard", "Admin")</p>
+        <p class="btn btn-primary btn-lg">@Html.ActionLink("Administrator Dashboard", "AdminDashboard", "Admin")</p>
     </div>
 </div>

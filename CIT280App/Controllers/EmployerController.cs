@@ -17,5 +17,13 @@ namespace CIT280App.Controllers
         {
             return View();
         }
+        public ActionResult EmployerList()
+        {
+            return View();
+        }
+        public ActionResult EmployerProfile()
+        {
+            return View();
+        }
     }
 }
