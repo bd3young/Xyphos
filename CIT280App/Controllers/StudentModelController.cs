@@ -21,6 +21,11 @@ namespace CIT280App.Controllers
             return View(db.Students.ToList());
         }
 
+        public ActionResult StudentDashboard()
+        {
+            return View();
+        }
+
         // GET: StudentModel/Details/5
         public ActionResult Details(string id)
         {
