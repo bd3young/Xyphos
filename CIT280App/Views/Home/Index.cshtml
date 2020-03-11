@@ -2,30 +2,40 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<style>
+
+    a{
+        color:white;
+        text-decoration: none;
+    }
+    a:hover{
+        color:aliceblue;
+        text-decoration:none;
+    }
+</style>
+
+<div class="text-center jumbotron bg-info text-white">
+    <h1>What is Xyphos</h1>
+    <p class="lead">Xyphos is made for students to find work around their location that utilizes their unique skillset. Xyphos allows Employers to post jobs that students can accept for work experience and pay.</p>
+    <p class="btn btn-primary btn-lg">@Html.ActionLink("Login", "Login", "Account")</p>
 </div>
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
+        <h2>As a Student</h2>
         <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+            Students can browse the jobs that employers post and contact the employers if they are interested in the job
         </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <p class="btn btn-primary btn-lg" style="color: white;">@Html.ActionLink("Student Dashboard", "StudentDashboard", "Student")</p>
     </div>
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        <h2>As a Employer</h2>
+        <p>Employers can post jobs for students and accept whichever student they believe will be the best for the job they have posted. </p>
+        <p class="btn btn-primary btn-lg"> @Html.ActionLink("Employer Dashboard", "EmployerDashboard", "Employer")</p>
     </div>
     <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <h2>As an Administrator</h2>
+        <p>Aministrators can edit and delete all user profiles as well as jobs.</p>
+        <p class="btn btn-primary btn-lg">@Html.ActionLink("Administrator Dashboard", "AdminDashboard", "Admin")</p>
     </div>
 </div>

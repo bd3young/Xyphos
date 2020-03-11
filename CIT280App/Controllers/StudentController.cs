@@ -13,5 +13,19 @@ namespace CIT280App.Controllers
         {
             return View();
         }
+        //public ActionResult StudentDashboard() 
+        //{
+        //    return View();
+        //}
+
+        public ActionResult StudentList() 
+        {
+            return View();
+        }
+
+        public ActionResult StudentProfile() 
+        {
+            return View();
+        }
     }
 }
