@@ -26,11 +26,20 @@
                     <li class="nav-item nav-link">
                         @Html.ActionLink("Contact", "Contact", "Home")
                     </li>
-                    <li class="nav-item nav-link">
+                    @*<li class="nav-item nav-link">
                         @Html.ActionLink("Students", "StudentList", "Student")
                     </li>
                     <li class="nav-item nav-link">
                         @Html.ActionLink("Employers", "EmployerList", "Employer")
+                    </li>*@
+                    <li class="nav-item nav-link">
+                        @Html.ActionLink("Students", "Index", "StudentModel")
+                    </li>
+                    <li class="nav-item nav-link">
+                        @Html.ActionLink("Employers", "Index", "EmployerModel")
+                    </li>
+                    <li class="nav-item nav-link">
+                        @Html.ActionLink("Jobs", "Index", "JobsModel")
                     </li>
                 </ul>
                 <ul class="nav navbar-nav ml-auto">

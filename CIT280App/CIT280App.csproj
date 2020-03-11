@@ -176,15 +176,19 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\EmployerController.cs" />
+    <Compile Include="Controllers\EmployerModelController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JobsController.cs" />
+    <Compile Include="Controllers\JobsModelController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
+    <Compile Include="Controllers\StudentModelController.cs" />
+    <Compile Include="DAL\XyphosContext.cs" />
+    <Compile Include="DAL\XyphosInitializer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\AdminModel.cs" />
     <Compile Include="Models\EmployerModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\JobsModel.cs" />
@@ -360,6 +364,21 @@
     <Content Include="Views\Employer\EmployerList.cshtml" />
     <Content Include="Views\Student\StudentProfile.cshtml" />
     <Content Include="Views\Employer\EmployerProfile.cshtml" />
+    <Content Include="Views\StudentModel\Create.cshtml" />
+    <Content Include="Views\StudentModel\Delete.cshtml" />
+    <Content Include="Views\StudentModel\Details.cshtml" />
+    <Content Include="Views\StudentModel\Edit.cshtml" />
+    <Content Include="Views\StudentModel\Index.cshtml" />
+    <Content Include="Views\EmployerModel\Create.cshtml" />
+    <Content Include="Views\EmployerModel\Delete.cshtml" />
+    <Content Include="Views\EmployerModel\Details.cshtml" />
+    <Content Include="Views\EmployerModel\Edit.cshtml" />
+    <Content Include="Views\EmployerModel\Index.cshtml" />
+    <Content Include="Views\JobsModel\Create.cshtml" />
+    <Content Include="Views\JobsModel\Delete.cshtml" />
+    <Content Include="Views\JobsModel\Details.cshtml" />
+    <Content Include="Views\JobsModel\Edit.cshtml" />
+    <Content Include="Views\JobsModel\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
