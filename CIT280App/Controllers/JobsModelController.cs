@@ -21,13 +21,10 @@ namespace CIT280App.Controllers
             var jobs = db.Jobs.Include(j => j.User);
             return View(jobs.ToList());
         }
-
-        public ActionResult AllJobs()
+        public ActionResult Map()
         {
-            var jobs = db.Jobs.Include(j => j.User);
-            return View(jobs.ToList());
+            return View();
         }
-
         // GET: JobsModel/Details/5
         public ActionResult Details(int? id)
         {
