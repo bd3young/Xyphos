@@ -178,7 +178,6 @@
     <Compile Include="Controllers\EmployerController.cs" />
     <Compile Include="Controllers\EmployerModelController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\JobsController.cs" />
     <Compile Include="Controllers\JobsModelController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
@@ -385,7 +384,7 @@
     <Content Include="Views\EmployerModels\Edit.cshtml" />
     <Content Include="Views\EmployerModels\Index.cshtml" />
     <Content Include="Views\Admin\AllUsers.cshtml" />
-    <Content Include="Views\Jobs\Map.cshtml" />
+    <Content Include="Views\JobsModel\Map.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
