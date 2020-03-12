@@ -162,8 +162,40 @@ namespace CIT280App.DAL
             context.SaveChanges();
             var admin = new List<UserModel>
             {
-
+                new UserModel
+                {
+                    ID=7,
+                    Role=UserRole.Admin,
+                    FirstName="Tom",
+                    LastName="Farrer",
+                    Description="Smells Like Coffee",
+                    City="Traverse City",
+                    State="MI",
+                    Email="tfarrer@mail.nmc.edu", 
+                },
+                  new UserModel{
+                      ID=8,
+                    Role=UserRole.Admin,
+                    FirstName="Rich",
+                    LastName="Robertson",
+                    Description="the quiet one",
+                    City="Traverse City",
+                    State="MI",
+                    Email="rrobertson@mail.nmc.edu",
+                },
+                  new UserModel{
+                    ID=9,
+                    Role=UserRole.Admin,
+                    FirstName="Tanner",
+                    LastName="Rabb",
+                    Description="likes the databases",
+                    City="Traverse City",
+                    State="MI",
+                    Email="trabb@mail.nmc.edu",
+                }
             };
+            admin.ForEach(a => context.Admins.Add(a));
+            context.SaveChanges();
 
            
         }

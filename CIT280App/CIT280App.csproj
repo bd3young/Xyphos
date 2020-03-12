@@ -371,9 +371,11 @@
     <Content Include="Views\JobsModel\Edit.cshtml" />
     <Content Include="Views\JobsModel\Index.cshtml" />
     <Content Include="Views\Admin\AllUsers.cshtml" />
-    <Content Include="Views\StudentModel\StudentDashboard.cshtml" />
-    <Content Include="Views\EmployerModel\EmployerDashboard.cshtml" />
-    <Content Include="Views\JobsModel\AllJobs.cshtml" />
+    <Content Include="Views\Admin\Create.cshtml" />
+    <Content Include="Views\Admin\Edit.cshtml" />
+    <Content Include="Views\Admin\Details.cshtml" />
+    <Content Include="Views\Admin\Delete.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
