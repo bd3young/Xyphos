@@ -32,6 +32,13 @@ namespace CIT280App.Controllers
             var users = new List<UserModel>(employers).Concat(students).Concat(admins).ToList();
             return View(users);
         }
+
+        public ActionResult AllJobs() 
+        {
+            var jobs = db.Jobs.Include(j => j.User);
+            return View(jobs.ToList());
+        }
+        
         // GET: Admin/Details/5
         public ActionResult Details(int? id)
         {
