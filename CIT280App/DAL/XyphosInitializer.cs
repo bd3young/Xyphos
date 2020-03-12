@@ -160,6 +160,10 @@ namespace CIT280App.DAL
             };
             jobs.ForEach(at => context.Jobs.Add(at));
             context.SaveChanges();
+            var admin = new List<UserModel>
+            {
+
+            };
 
            
         }

@@ -21,13 +21,8 @@ namespace CIT280App.Controllers
             return View(db.Students.ToList());
         }
 
-        public ActionResult StudentDashboard()
-        {
-            return View();
-        }
-
         // GET: StudentModel/Details/5
-        public ActionResult Details(string id)
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
@@ -52,11 +47,11 @@ namespace CIT280App.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Major,School,YearInSchool,Role,FirstName,LastName,City,State,Description,Email,Phone,ProfilePic,Reviews")] StudentModel studentModel)
+        public ActionResult Create([Bind(Include = "ID,Role,FirstName,LastName,City,State,Description,Email,Phone,ProfilePic,Reviews,Major,School,YearInSchool")] StudentModel studentModel)
         {
             if (ModelState.IsValid)
             {
-                db.Students.Add(studentModel);
+                db.Admins.Add(studentModel);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -65,7 +60,7 @@ namespace CIT280App.Controllers
         }
 
         // GET: StudentModel/Edit/5
-        public ActionResult Edit(string id)
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
@@ -84,7 +79,7 @@ namespace CIT280App.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,Major,School,YearInSchool,Role,FirstName,LastName,City,State,Description,Email,Phone,ProfilePic,Reviews")] StudentModel studentModel)
+        public ActionResult Edit([Bind(Include = "ID,Role,FirstName,LastName,City,State,Description,Email,Phone,ProfilePic,Reviews,Major,School,YearInSchool")] StudentModel studentModel)
         {
             if (ModelState.IsValid)
             {
@@ -96,7 +91,7 @@ namespace CIT280App.Controllers
         }
 
         // GET: StudentModel/Delete/5
-        public ActionResult Delete(string id)
+        public ActionResult Delete(int? id)
         {
             if (id == null)
             {
@@ -113,10 +108,10 @@ namespace CIT280App.Controllers
         // POST: StudentModel/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
+        public ActionResult DeleteConfirmed(int id)
         {
             StudentModel studentModel = db.Students.Find(id);
-            db.Students.Remove(studentModel);
+            db.Admins.Remove(studentModel);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

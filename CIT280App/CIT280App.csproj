@@ -379,6 +379,11 @@
     <Content Include="Views\JobsModel\Details.cshtml" />
     <Content Include="Views\JobsModel\Edit.cshtml" />
     <Content Include="Views\JobsModel\Index.cshtml" />
+    <Content Include="Views\EmployerModels\Create.cshtml" />
+    <Content Include="Views\EmployerModels\Delete.cshtml" />
+    <Content Include="Views\EmployerModels\Details.cshtml" />
+    <Content Include="Views\EmployerModels\Edit.cshtml" />
+    <Content Include="Views\EmployerModels\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

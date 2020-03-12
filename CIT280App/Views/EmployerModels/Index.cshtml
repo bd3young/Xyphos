@@ -1,4 +1,4 @@
-﻿@model IEnumerable<CIT280App.Models.StudentModel>
+﻿@model IEnumerable<CIT280App.Models.EmployerModel>
 
 @{
     ViewBag.Title = "Index";
@@ -42,13 +42,10 @@
             @Html.DisplayNameFor(model => model.Reviews)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Major)
+            @Html.DisplayNameFor(model => model.BuisnessName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.School)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.YearInSchool)
+            @Html.DisplayNameFor(model => model.BuisnessType)
         </th>
         <th></th>
     </tr>
@@ -86,13 +83,10 @@
             @Html.DisplayFor(modelItem => item.Reviews)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Major)
+            @Html.DisplayFor(modelItem => item.BuisnessName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.School)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.YearInSchool)
+            @Html.DisplayFor(modelItem => item.BuisnessType)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |

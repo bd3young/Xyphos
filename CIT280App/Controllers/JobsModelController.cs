@@ -18,11 +18,12 @@ namespace CIT280App.Controllers
         // GET: JobsModel
         public ActionResult Index()
         {
-            return View(db.Jobs.ToList());
+            var jobs = db.Jobs.Include(j => j.User);
+            return View(jobs.ToList());
         }
 
         // GET: JobsModel/Details/5
-        public ActionResult Details(string id)
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
@@ -39,6 +40,7 @@ namespace CIT280App.Controllers
         // GET: JobsModel/Create
         public ActionResult Create()
         {
+            ViewBag.UserID = new SelectList(db.Admins, "ID", "FirstName");
             return View();
         }
 
@@ -56,11 +58,12 @@ namespace CIT280App.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.UserID = new SelectList(db.Admins, "ID", "FirstName", jobsModel.UserID);
             return View(jobsModel);
         }
 
         // GET: JobsModel/Edit/5
-        public ActionResult Edit(string id)
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
@@ -71,6 +74,7 @@ namespace CIT280App.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.UserID = new SelectList(db.Admins, "ID", "FirstName", jobsModel.UserID);
             return View(jobsModel);
         }
 
@@ -87,11 +91,12 @@ namespace CIT280App.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.UserID = new SelectList(db.Admins, "ID", "FirstName", jobsModel.UserID);
             return View(jobsModel);
         }
 
         // GET: JobsModel/Delete/5
-        public ActionResult Delete(string id)
+        public ActionResult Delete(int? id)
         {
             if (id == null)
             {
@@ -108,7 +113,7 @@ namespace CIT280App.Controllers
         // POST: JobsModel/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
+        public ActionResult DeleteConfirmed(int id)
         {
             JobsModel jobsModel = db.Jobs.Find(id);
             db.Jobs.Remove(jobsModel);

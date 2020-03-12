@@ -1,4 +1,4 @@
-﻿@model CIT280App.Models.StudentModel
+﻿@model CIT280App.Models.EmployerModel
 
 @{
     ViewBag.Title = "Edit";
@@ -12,7 +12,7 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>StudentModel</h4>
+        <h4>EmployerModel</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.ID)
@@ -98,26 +98,18 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Major, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.BuisnessName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Major, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Major, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.BuisnessName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.BuisnessName, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.School, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.BuisnessType, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.School, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.School, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.YearInSchool, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.YearInSchool, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.YearInSchool, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.BuisnessType, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.BuisnessType, "", new { @class = "text-danger" })
             </div>
         </div>
 

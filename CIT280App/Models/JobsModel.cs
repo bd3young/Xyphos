@@ -18,6 +18,7 @@ namespace CIT280App.Models
         public int Pay { get; set; }        
         public bool IsComplete { get; set; }
 
+        public virtual UserModel User { get; set; }
         public virtual StudentModel Student { get; set; }
         public virtual EmployerModel Employer { get; set; }
     }
