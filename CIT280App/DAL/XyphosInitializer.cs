@@ -15,7 +15,7 @@ namespace CIT280App.DAL
             var students = new List<StudentModel>
             {
             new StudentModel{
-                ID="1",
+                ID=1,
                 Role= UserRole.Student,
                 FirstName="Carson",
                 LastName="Alexander",
@@ -31,7 +31,7 @@ namespace CIT280App.DAL
                 YearInSchool= "Senior"
             },
             new StudentModel{
-                ID="2",
+                ID=2,
                 Role= UserRole.Student,
                 FirstName="Willy",
                 LastName="Chilly",
@@ -47,7 +47,7 @@ namespace CIT280App.DAL
                 YearInSchool= "Freshman"
             },
             new StudentModel{
-                ID="3",
+                ID=3,
                 Role= UserRole.Student,
                 FirstName="Henry",
                 LastName="Howard",
@@ -70,7 +70,7 @@ namespace CIT280App.DAL
             var employers = new List<EmployerModel>
             {
                 new EmployerModel{
-                    ID="4",
+                    ID=4,
                     Role= UserRole.Employer,
                     FirstName="Jill",
                     LastName="Benton",
@@ -85,7 +85,7 @@ namespace CIT280App.DAL
                     BuisnessType= "Pet Store"
                 },
                 new EmployerModel{
-                    ID="5",
+                    ID=5,
                     Role= UserRole.Employer,
                     FirstName="Kelro",
                     LastName="Pharmton",
@@ -100,7 +100,7 @@ namespace CIT280App.DAL
                     BuisnessType= "Electronic Store"
                 },
                 new EmployerModel{
-                    ID="6",
+                    ID=6,
                     Role= UserRole.Employer,
                     FirstName="George",
                     LastName="Jameson",
@@ -122,8 +122,8 @@ namespace CIT280App.DAL
             var jobs = new List<JobsModel>
             {
                 new JobsModel{
-                    ID="01",
-                    UserID="6",
+                    ID=01,
+                    UserID=6,
                     Name="Shingling a Roof",
                     Description="Construction workers needed to shingle a roof",
                     City="Manton",
@@ -134,8 +134,8 @@ namespace CIT280App.DAL
                     IsComplete=false
                 },
                 new JobsModel{
-                    ID="02",
-                    UserID="5",
+                    ID=02,
+                    UserID=5,
                     Name="Building computers",
                     Description="Need extra help to build computers during the weekend.",
                     City="Traverse City",
@@ -146,8 +146,8 @@ namespace CIT280App.DAL
                     IsComplete=false
                 },
                 new JobsModel{
-                    ID="03",
-                    UserID="6",
+                    ID=03,
+                    UserID=6,
                     Name="Paveing a driveway",
                     Description="Need help paveing a drive way this weekend",
                     City="Manistee",
@@ -158,9 +158,10 @@ namespace CIT280App.DAL
                     IsComplete=false
                 },
             };
-
             jobs.ForEach(at => context.Jobs.Add(at));
             context.SaveChanges();
+
+           
         }
     }
 }

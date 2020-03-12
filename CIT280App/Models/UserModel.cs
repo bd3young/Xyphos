@@ -12,7 +12,7 @@ namespace CIT280App.Models
     public class UserModel
     {
         
-        public string ID { get; set; }
+        public int ID { get; set; }
         public UserRole Role { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
