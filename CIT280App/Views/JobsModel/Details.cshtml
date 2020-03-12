@@ -58,13 +58,13 @@
             @Html.DisplayFor(model => model.RequiredSkills)
         </dd>
 
-        <dt>
+        @*<dt>
             @Html.DisplayNameFor(model => model.Photo)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Photo)
-        </dd>
+        </dd>*@
 
         <dt>
             @Html.DisplayNameFor(model => model.Pay)
@@ -85,6 +85,9 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @*Add Mail too*@
+    @*<a class="btn btn-primary" href="" >@Html.DisplayFor(model => model.User.Email) </a>*@
+
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |*@
     @Html.ActionLink("Back to List", "Index")
 </p>
