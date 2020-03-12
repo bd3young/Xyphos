@@ -1,5 +1,4 @@
 ﻿
-
 @{
     ViewBag.Title = "StudentDashboard";
 }
@@ -18,8 +17,8 @@
 <h2 class="text-center jumbotron bg-info text-white">Student Dashboard</h2>
 
 <div class="text-center">
-    <p class="btn btn-primary btn-lg"> Jobs List</p>
+    <p class="btn btn-primary btn-lg"> @Html.ActionLink("Jobs List", "Index", "JobsModel")</p>
     <br />
 
-    <p class="btn btn-primary btn-lg"> @Html.ActionLink("Profile", "StudentProfile", "Student")</p>
+    <p class="btn btn-primary btn-lg"> @Html.ActionLink("Profile", "Details", "StudentModel")</p>
 </div>
