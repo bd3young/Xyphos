@@ -15,6 +15,8 @@ namespace CIT280App.DAL
         public DbSet<EmployerModel> Employers { get; set; }
         public DbSet<UserModel> Admins { get; set; }
 
+      
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
