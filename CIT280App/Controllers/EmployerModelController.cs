@@ -11,6 +11,7 @@ using CIT280App.Models;
 
 namespace CIT280App.Controllers
 {
+    [Authorize]
     public class EmployerModelController : Controller
     {
         private XyphosContext db = new XyphosContext();

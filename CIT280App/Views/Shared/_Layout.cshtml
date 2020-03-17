@@ -46,8 +46,15 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item nav-link"><a href="#"><i class="fas fa-registered"></i>Register</a></li>
-                    <li class="nav-item nav-link"><a href="#"><i class="fas fa-sign-in-alt"></i>Login</a></li>
+                    @*<li class="nav-item nav-link"><a href="#"><i class="fas fa-registered"></i>Register</a></li>
+        <li class="nav-item nav-link"><a href="#"><i class="fas fa-sign-in-alt"></i>Login</a></li>*@
+                    @*<li class="nav-item nav-link">
+            @Html.ActionLink("Register", "Index", "AccountViewModels")
+        </li>
+        <li class="nav-item nav-link">
+            @Html.ActionLink("Login", "Index", "Account")
+        </li>*@
+                    @Html.Partial("_LoginPartial")
                 </ul>
             </div>
         </nav>
