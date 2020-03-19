@@ -4,12 +4,12 @@
     ViewBag.Title = "AllJobs";
 }
 
-<h2>AllJobs</h2>
+<h2 class="text-center jumbotron bg-info text-white">All Jobs</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table class="table text-center">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.User.FirstName)
@@ -29,9 +29,9 @@
         <th>
             @Html.DisplayNameFor(model => model.RequiredSkills)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.Photo)
-        </th>
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.Pay)
         </th>
@@ -61,9 +61,9 @@
         <td>
             @Html.DisplayFor(modelItem => item.RequiredSkills)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.Photo)
-        </td>
+        </td>*@
         <td>
             @Html.DisplayFor(modelItem => item.Pay)
         </td>
