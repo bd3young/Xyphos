@@ -35,12 +35,12 @@
         <th>
             @Html.DisplayNameFor(model => model.Phone)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.ProfilePic)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Reviews)
-        </th>
+        </th>*@
         <th></th>
     </tr>
 
@@ -70,12 +70,12 @@
         <td>
             @Html.DisplayFor(modelItem => item.Phone)
         </td>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.ProfilePic)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Reviews)
-        </td>
+        </td>*@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
             @Html.ActionLink("Details", "Details", new { id=item.ID }) |
