@@ -40,7 +40,22 @@ namespace CIT280App.Controllers
             var jobs = db.Jobs.Include(j => j.User);
             return View(jobs.ToList());
         }
-        
+
+        // GET: JobsModel/Details/5
+        public ActionResult JobDetails(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            JobsModel jobsModel = db.Jobs.Find(id);
+            if (jobsModel == null)
+            {
+                return HttpNotFound();
+            }
+            return View(jobsModel);
+        }
+
         // GET: Admin/Details/5
         public ActionResult Details(int? id)
         {
@@ -79,6 +94,39 @@ namespace CIT280App.Controllers
             return View(userModel);
         }
 
+        // GET: JobsModel/Edit/5
+        public ActionResult JobEdit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            JobsModel jobsModel = db.Jobs.Find(id);
+            if (jobsModel == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.UserID = new SelectList(db.Admins, "ID", "FirstName", jobsModel.UserID);
+            return View(jobsModel);
+        }
+
+        // POST: JobsModel/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult JobEdit([Bind(Include = "ID,UserID,Name,Description,City,State,RequiredSkills,Photo,Pay,IsComplete")] JobsModel jobsModel)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(jobsModel).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("AllJobs");
+            }
+            ViewBag.UserID = new SelectList(db.Admins, "ID", "FirstName", jobsModel.UserID);
+            return View(jobsModel);
+        }
+
         // GET: Admin/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -108,6 +156,33 @@ namespace CIT280App.Controllers
                 return RedirectToAction("Index");
             }
             return View(userModel);
+        }
+
+
+        // GET: JobsModel/Delete/5
+        public ActionResult JobDelete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            JobsModel jobsModel = db.Jobs.Find(id);
+            if (jobsModel == null)
+            {
+                return HttpNotFound();
+            }
+            return View(jobsModel);
+        }
+
+        // POST: JobsModel/Delete/5
+        [HttpPost, ActionName("JobDelete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult JobDeleteConfirmed(int id)
+        {
+            JobsModel jobsModel = db.Jobs.Find(id);
+            db.Jobs.Remove(jobsModel);
+            db.SaveChanges();
+            return RedirectToAction("AllJobs");
         }
 
         // GET: Admin/Delete/5

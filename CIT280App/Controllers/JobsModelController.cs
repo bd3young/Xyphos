@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using CIT280App.DAL;
 using CIT280App.Models;
+using CIT280App.ViewModels;
 
 namespace CIT280App.Controllers
 {
@@ -21,6 +22,23 @@ namespace CIT280App.Controllers
         {
             var jobs = db.Jobs.Include(j => j.User);
             return View(jobs.ToList());
+        }
+
+        public ActionResult EmployerJobList(int? id) 
+        {
+
+            if (id == null)
+            {
+                //CHANGE BACK BEFORE MASTER
+                //return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                id = 6;              
+            }
+            UserModel Emp = db.Employers.Find(id);
+            ViewData["EmpID"] = Emp.ID;
+            var jobs = db.Jobs.Include(j => j.User);
+
+            return View(jobs.ToList());
+
         }
         public ActionResult Map()
         {
@@ -66,7 +84,6 @@ namespace CIT280App.Controllers
             return View(jobsModel);
         }
 
-        // GET: JobsModel/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -93,7 +110,7 @@ namespace CIT280App.Controllers
             {
                 db.Entry(jobsModel).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("EmployerJobList");
             }
             ViewBag.UserID = new SelectList(db.Admins, "ID", "FirstName", jobsModel.UserID);
             return View(jobsModel);

@@ -22,7 +22,7 @@ namespace CIT280App.Controllers
             return View(db.Employers.ToList());
         }
 
-        public ActionResult EmployerDashboard() 
+        public ActionResult EmployersDashboard() 
         {
             return View();
         }
