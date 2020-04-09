@@ -84,7 +84,7 @@ namespace CIT280App.Controllers
             return View(jobsModel);
         }
 
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int? id, int empid)
         {
             if (id == null)
             {
