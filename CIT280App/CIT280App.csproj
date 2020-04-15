@@ -384,6 +384,8 @@
     <Content Include="Views\EmployerModel\Profile.cshtml" />
     <Content Include="Views\JobsModel\EmployerJobList.cshtml" />
     <Content Include="Views\JobsModel\Edit.cshtml" />
+    <Content Include="Views\Admin\CreateUserDashboard.cshtml" />
+    <Content Include="Views\Account\UsersDashboard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

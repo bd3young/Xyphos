@@ -26,6 +26,11 @@ namespace CIT280App.Controllers
         {
             return View();
         }
+
+        public ActionResult CreateUserDashboard()
+        {
+            return View();
+        }
         public ActionResult AllUsers()
         {
             var employers = db.Employers.ToList();
@@ -86,6 +91,7 @@ namespace CIT280App.Controllers
         {
             if (ModelState.IsValid)
             {
+                userModel.Role = UserRole.Admin;
                 db.Admins.Add(userModel);
                 db.SaveChanges();
                 return RedirectToAction("Index");

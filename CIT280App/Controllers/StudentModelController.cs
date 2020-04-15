@@ -59,7 +59,8 @@ namespace CIT280App.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Admins.Add(studentModel);
+                studentModel.Role = UserRole.Student;
+                db.Students.Add(studentModel);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

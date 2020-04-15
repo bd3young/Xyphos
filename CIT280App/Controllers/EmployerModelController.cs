@@ -59,6 +59,7 @@ namespace CIT280App.Controllers
         {
             if (ModelState.IsValid)
             {
+                employerModel.Role = UserRole.Employer;
                 db.Employers.Add(employerModel);
                 db.SaveChanges();
                 return RedirectToAction("Index");

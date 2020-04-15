@@ -60,9 +60,10 @@ namespace CIT280App.Controllers
         }
 
         // GET: JobsModel/Create
-        public ActionResult Create()
+        public ActionResult Create(int? id)
         {
-            ViewBag.UserID = new SelectList(db.Admins, "ID", "FirstName");
+
+            ViewBag.UserID = id;
             return View();
         }
 
@@ -84,7 +85,7 @@ namespace CIT280App.Controllers
             return View(jobsModel);
         }
 
-        public ActionResult Edit(int? id, int empid)
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
@@ -95,7 +96,7 @@ namespace CIT280App.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.UserID = new SelectList(db.Admins, "ID", "FirstName", jobsModel.UserID);
+            ViewBag.UserID = jobsModel.UserID;
             return View(jobsModel);
         }
 
@@ -108,11 +109,12 @@ namespace CIT280App.Controllers
         {
             if (ModelState.IsValid)
             {
+                
                 db.Entry(jobsModel).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("EmployerJobList");
             }
-            ViewBag.UserID = new SelectList(db.Admins, "ID", "FirstName", jobsModel.UserID);
+            ViewBag.UserID = new SelectList(db.Employers, "ID", "FirstName", jobsModel.UserID);
             return View(jobsModel);
         }
 
