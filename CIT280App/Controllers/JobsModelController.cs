@@ -59,6 +59,7 @@ namespace CIT280App.Controllers
             return View(jobsModel);
         }
 
+
         // GET: JobsModel/Create
         public ActionResult Create(int? id)
         {

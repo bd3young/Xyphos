@@ -22,13 +22,29 @@ namespace CIT280App.Controllers
             return View(db.Students.ToList());
         }
 
-        public ActionResult StudentDashboard()
+        public ActionResult StudentsDashboard()
         {
             return View();
         }
 
         // GET: StudentModel/Details/5
         public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                //CHANGE BACK BEFORE PUSH TO MASTER
+                //return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                id = 1;
+            }
+            StudentModel studentModel = db.Students.Find(id);
+            if (studentModel == null)
+            {
+                return HttpNotFound();
+            }
+            return View(studentModel);
+        }
+
+        public ActionResult Profile(int? id)
         {
             if (id == null)
             {

@@ -44,6 +44,22 @@ namespace CIT280App.Controllers
             return View(employerModel);
         }
 
+        public ActionResult Profile(int? id)
+        {
+            if (id == null)
+            {
+                //CHANGE BACK BEFORE MASTER
+                //return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                id = 4;
+            }
+            EmployerModel employerModel = db.Employers.Find(id);
+            if (employerModel == null)
+            {
+                return HttpNotFound();
+            }
+            return View(employerModel);
+        }
+
         // GET: EmployerModels/Create
         public ActionResult Create()
         {
